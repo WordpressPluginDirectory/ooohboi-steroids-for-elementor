@@ -135,8 +135,8 @@ class OoohBoi_Breaking_Bad {
 				'selectors' => [
 					'{{WRAPPER}}.ob-is-breaking-bad > .elementor-container > .elementor-row, {{WRAPPER}}.ob-is-breaking-bad > .elementor-container' => 'flex-direction: {{VALUE}};', 
 					'{{WRAPPER}}.ob-is-breaking-bad.ob-bb-inner > .elementor-container > .elementor-row, {{WRAPPER}}.ob-is-breaking-bad.ob-bb-inner > .elementor-container' => 'flex-direction: {{VALUE}};', 
-					'{{WRAPPER}}.ob-is-breaking-bad.ob-is-glider > .elementor-container.swiper-container-vertical > .elementor-row, {{WRAPPER}}.ob-is-breaking-bad.ob-is-glider > .elementor-container.swiper-container-vertical' => 'flex-direction: column;', 
-					'{{WRAPPER}}.ob-is-breaking-bad.ob-is-glider.ob-bb-inner > .elementor-container.swiper-container-vertical > .elementor-row, {{WRAPPER}}.ob-is-breaking-bad.ob-is-glider.ob-bb-inner > .elementor-container.swiper-container-vertical' => 'flex-direction: column;', 
+					'{{WRAPPER}}.ob-is-breaking-bad.ob-is-glider > .elementor-container.swiper-vertical > .elementor-row, {{WRAPPER}}.ob-is-breaking-bad.ob-is-glider > .elementor-container.swiper-vertical' => 'flex-direction: column;', 
+					'{{WRAPPER}}.ob-is-breaking-bad.ob-is-glider.ob-bb-inner > .elementor-container.swiper-vertical > .elementor-row, {{WRAPPER}}.ob-is-breaking-bad.ob-is-glider.ob-bb-inner > .elementor-container.swiper-vertical' => 'flex-direction: column;', 
 				],
 				'condition' => [
 					'_ob_bbad_use_it' => 'yes',

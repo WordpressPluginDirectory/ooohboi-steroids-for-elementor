@@ -3,9 +3,6 @@ use Elementor\Controls_Manager;
 use Elementor\Element_Base;
 use Elementor\Group_Control_Background;
 use Elementor\Group_Control_Typography;
-/*
-use Elementor\Core\Schemes\Typography;
-*/
 use Elementor\Core\Kits\Documents\Tabs\Global_Typography;
 
 if ( ! defined( 'ABSPATH' ) ) {

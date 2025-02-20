@@ -51,8 +51,8 @@ div[class*="ob-got-stalker"] .elementor-editor-widget-settings .elementor-editor
 .elementor-edit-area-active .ob-is-glider .elementor-container > .swiper-wrapper > .elementor-element.elementor-column {
 	width: 100%;
 }
-.elementor-edit-area-active .ob-is-glider .elementor-container.swiper-container-vertical > .elementor-row.swiper-wrapper > .swiper-slide, 
-.elementor-edit-area-active .ob-is-glider .elementor-container.swiper-container-vertical > .swiper-wrapper > .swiper-slide {
+.elementor-edit-area-active .ob-is-glider .elementor-container.swiper-vertical > .elementor-row.swiper-wrapper > .swiper-slide, 
+.elementor-edit-area-active .ob-is-glider .elementor-container.swiper-vertical > .swiper-wrapper > .swiper-slide {
 	width: 100% !important;
 }
 .elementor-edit-area-active .ob-is-glider .swiper-slide a.elementor-button {

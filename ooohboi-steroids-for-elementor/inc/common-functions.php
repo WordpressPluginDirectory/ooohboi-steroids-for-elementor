@@ -21,10 +21,10 @@ By enabling this option you acknowledge its <a href="https://greensock.com/stand
 $cdnjs_motionpath = '<p class="ob-alert">NOTE! This (MotionPath) JavaScript library is hosted by, and loaded from the <a href="https://cdnjs.com/libraries/gsap">cdnjs.com</a>. "OoohBoi - Steroids for Elementor" plugin does not include that file! 
 By enabling this option you acknowledge its <a href="https://greensock.com/standard-license/" target="_blank">terms of use</a>, and accept every responsibility - including the risk of script unavailability, vulnerability and the data loss.</p>';
 // --------------------------- E X O P I T ----- >
+
 $config_submenu = array(
-    
     'type'              => 'menu', // Required, menu or metabox
-    'title'             => 'Steroids for Elementor v' . OoohBoi_Steroids::VERSION, // options panel title
+    'title'             => 'Ooohboi Steroids for Elementor', // options panel title
     'menu_title'        => 'Steroids for Elementor', // admin menu title
     'icon'              => SFE_DIR_URL . 'img/sfe-icon-WP-admin.png',
     'id'                => 'steroids_for_elementor',  // Required, meta box id, unique per page, to save: get_option( id )
@@ -66,49 +66,94 @@ $fields[] = array(
             'id'            => 'ob_use_btl', 
             'title'			=> 'BETTER TEMPLATES LIBRARY', 
             'type'			=> 'switcher',
-            'description'	=> sprintf( __( '%sAdd preview to your templates, Export/Import/Share your templates with preview image.%s', 'ooohboi-steroids' ), '<span class="ob-option-desc">', '</span>' ),
+            'description' => sprintf(
+                __( '%sAdd preview to your templates, Export/Import/Share your templates with preview image.%s <a href="https://www.youtube.com/watch?v=A4lFYsk5TLs" target="_blank" rel="noopener noreferrer" style="white-space: nowrap;">Video Here</a>', 'ooohboi-steroids' ),
+                '<span class="ob-option-desc">',
+                '</span>'
+            ),
             'default'       => 'no',
         ),
         array(
             'id'            => 'ob_use_harakiri', 
             'title'			=> 'HARAKIRI', 
             'type'			=> 'switcher',
-            'description'	=> sprintf( __( '%sAllows you to change the writing mode of the Heading and Text Editor widgets%s', 'ooohboi-steroids' ), '<span class="ob-option-desc">', '</span>' ),
+            'description' => wp_kses_post(
+                sprintf(
+                    esc_html__('%sAllows you to change the writing mode of the Heading and Text Editor widgets.%s %s', 'ooohboi-steroids'),
+                    '<span class="ob-option-desc">',
+                    '</span>',
+                    '<a href="https://www.youtube.com/watch?v=_jvsCCmFWJ0" target="_blank" rel="noopener noreferrer" style="white-space: nowrap;">' . esc_html__('Video Here', 'ooohboi-steroids') . '</a>'
+                )
+            ),
             'default'       => 'yes',
         ),
         array(
             'id'            => 'ob_use_poopart', 
             'title'			=> 'POOPART', 
             'type'			=> 'switcher',
-            'description'	=> sprintf( __( '%sAdd an overlay or underlay ghost-element to any Elementor Widget%s', 'ooohboi-steroids' ), '<span class="ob-option-desc">', '</span>' ), 
+            'description' => wp_kses_post(
+                sprintf(
+                    esc_html__('%sAdd an overlay or underlay ghost-element to any Elementor Widget.%s %s', 'ooohboi-steroids'),
+                    '<span class="ob-option-desc">',
+                    '</span>',
+                    '<a href="https://www.youtube.com/watch?v=GIVQw331860" target="_blank" rel="noopener noreferrer" style="white-space: nowrap;">' . esc_html__('Video Here', 'ooohboi-steroids') . '</a>'
+                )
+            ),
             'default'       => 'yes',
         ),
         array(
             'id'            => 'ob_use_overlaiz', 
             'title'			=> 'OVERLAIZ', 
             'type'			=> 'switcher',
-            'description'	=> sprintf( __( '%sAn awesome set of options for the Background Overlay element manipulation (up to Elementor 3.5.9)%s', 'ooohboi-steroids' ), '<span class="ob-option-desc">', '</span>' ), 
+            'description' => wp_kses_post(
+                sprintf(
+                    /* translators: %1$s opening span tag, %2$s closing span tag, %3$s YouTube link */
+                    __( '%1$sAn awesome set of options for the Background Overlay element manipulation (up to Elementor 3.5.9)%2$s %3$s', 'ooohboi-steroids' ),
+                    '<span class="ob-option-desc">',
+                    '</span>',
+                    '<a href="' . esc_url('https://www.youtube.com/watch?v=iMm9MI120e8') . '" target="_blank" rel="noopener noreferrer" style="white-space: nowrap;">' . esc_html__('Video Here', 'ooohboi-steroids') . '</a>'
+                )
+            ),
             'default'       => 'yes',
         ),
         array(
             'id'            => 'ob_use_paginini', 
             'title'			=> 'PAGININI', 
             'type'			=> 'switcher',
-            'description'	=> sprintf( __( '%sIt allows you to style up the posts pagination in Elementor%s', 'ooohboi-steroids' ), '<span class="ob-option-desc">', '</span>' ), 
+            'description' => wp_kses_post(
+                sprintf(
+                    esc_html__('%sIt allows you to style up the posts pagination in Elementor.%s %s', 'ooohboi-steroids'),
+                    '<span class="ob-option-desc">',
+                    '</span>',
+                    '<a href="https://www.youtube.com/watch?v=f6YO8jMAlMc" target="_blank" rel="noopener noreferrer" style="white-space: nowrap;">' . esc_html__('Video Here', 'ooohboi-steroids') . '</a>'
+                )
+            ),
             'default'       => 'yes',
         ),
         array(
             'id'            => 'ob_use_breakingbad', 
             'title'			=> 'BREAKING BAD', 
             'type'			=> 'switcher',
-            'description'	=> sprintf( __( '%sA must to have extension for the Section and Columns (up to Elementor 3.5.9)%s', 'ooohboi-steroids' ), '<span class="ob-option-desc">', '</span>' ), 
+            'description' => wp_kses_post(
+                sprintf(
+                    __( '%sA must to have extension for the Section and Columns (up to Elementor 3.5.9)%s %s', 'ooohboi-steroids' ),
+                    '<span class="ob-option-desc">',
+                    '</span>',
+                    '<a class="ooohboi-video-link" href="https://www.youtube.com/watch?v=DHjd_cOwRIg" target="_blank" rel="noopener noreferrer" style="white-space: nowrap;">' . esc_html__('Video Here', 'ooohboi-steroids') . '</a>'
+                )
+            ),
             'default'       => 'yes',
         ),
         array(
             'id'            => 'ob_use_glider', 
-            'title'			=> 'GLIDER', 
-            'type'			=> 'switcher',
-            'description'	=> sprintf( __( '%sThe content slider made out of Section and Columns (Swiper)%s', 'ooohboi-steroids' ), '<span class="ob-option-desc">', '</span>' ), 
+            'title'         => 'GLIDER', 
+            'type'          => 'switcher',
+            'description' => sprintf(
+                __( '%sThe content slider made out of Section and Columns (Swiper).%s <a href="https://www.youtube.com/watch?v=9t4vugF2Lok" target="_blank" rel="noopener noreferrer" style="white-space: nowrap;">%s</a>', 'ooohboi-steroids' ),
+                '<span class="ob-option-desc">',
+                '</span>',
+                esc_html__( 'Video Here', 'ooohboi-steroids' )
+            ),
             'default'       => 'yes',
         ),
         array(
@@ -136,14 +181,27 @@ $fields[] = array(
             'id'            => 'ob_use_videomasq', 
             'title'			=> 'VIDEOMASQ', 
             'type'			=> 'switcher',
-            'description'	=> sprintf( __( '%sAdd the SVG mask to the Section video background and let the video play inside any shape%s', 'ooohboi-steroids' ), '<span class="ob-option-desc">', '</span>' ),
+            'description' => wp_kses_post(
+                sprintf(
+                    /* translators: %1$s opening span tag, %2$s closing span tag, %3$s YouTube link */
+                    __( '%1$sAdd the SVG mask to the Section video background and let the video play inside any shape%2$s %3$s', 'ooohboi-steroids' ),
+                    '<span class="ob-option-desc">',
+                    '</span>',
+                    '<a class="ooohboi-video-link" href="' . esc_url('https://www.youtube.com/watch?v=6es-E_xjXSE') . '" target="_blank" rel="noopener noreferrer" style="white-space: nowrap;">' . esc_html__('Video Here', 'ooohboi-steroids') . '</a>'
+                )
+            ),
             'default'       => 'yes',
         ),
         array(
             'id'            => 'ob_use_butterbutton', 
             'title'			=> 'BUTTER BUTTON', 
             'type'			=> 'switcher',
-            'description'	=> sprintf( __( '%sDesign awesome buttons in Elementor%s', 'ooohboi-steroids' ), '<span class="ob-option-desc">', '</span>' ), 
+            'description' => sprintf( 
+                __( '%1$sDesign awesome buttons in Elementor%2$s %3$s', 'ooohboi-steroids' ), 
+                '<span class="ob-option-desc">', 
+                '</span>',
+                '<a class="ooohboi-video-link" href="' . esc_url('https://www.youtube.com/watch?v=7fjREuvM0YY') . '" target="_blank" rel="noopener noreferrer" style="white-space: nowrap;">' . esc_html__('Video Here', 'ooohboi-steroids') . '</a>' 
+            ),
             'default'       => 'yes',
         ),
         array(
@@ -157,7 +215,14 @@ $fields[] = array(
             'id'            => 'ob_use_shadough', 
             'title'			=> 'SHADOUGH', 
             'type'			=> 'switcher',
-            'description'	=> sprintf( __( '%sCreate the shadow that conforms the shape%s', 'ooohboi-steroids' ), '<span class="ob-option-desc">', '</span>' ), 
+            'description' => wp_kses_post(
+                sprintf(
+                    __( '%sCreate the shadow that conforms the shape%s %s', 'ooohboi-steroids' ),
+                    '<span class="ob-option-desc">',
+                    '</span>',
+                    '<a class="ooohboi-video-link" href="' . esc_url('https://www.youtube.com/watch?v=biZpCZIFts8') . '" target="_blank" rel="noopener noreferrer" style="white-space: nowrap;">' . esc_html__('Video Here', 'ooohboi-steroids') . '</a>'
+                )
+            ),
             'default'       => 'yes',
         ),
         array(
@@ -178,7 +243,14 @@ $fields[] = array(
             'id'            => 'ob_use_spacerat', 
             'title'			=> 'SPACERAT', 
             'type'			=> 'switcher',
-            'description'	=> sprintf( __( '%sAdds new shine to the Spacer widget.', 'ooohboi-steroids%s' ), '<span class="ob-option-desc">', '</span>' ), 
+            'description' => wp_kses_post(
+                sprintf(
+                    __( '%sAdds new shine to the Spacer widget.%s %s', 'ooohboi-steroids' ),
+                    '<span class="ob-option-desc">',
+                    '</span>',
+                    '<a class="ooohboi-video-link" href="' . esc_url('https://www.youtube.com/watch?v=P8xBP3TkvDM') . '" target="_blank" rel="noopener noreferrer" style="white-space: nowrap;">' . esc_html__('Video Here', 'ooohboi-steroids') . '</a>'
+                )
+            ),
             'default'       => 'yes',
         ),
         array(
@@ -199,7 +271,14 @@ $fields[] = array(
             'id'            => 'ob_use_hoveranimator', 
             'title'			=> 'HOVERANIMATOR', 
             'type'			=> 'switcher',
-            'description'	=> sprintf( __( '%sAnimate widgets on columns mouse-over event', 'ooohboi-steroids%s' ), '<span class="ob-option-desc">', '</span>' ), 
+            'description' => wp_kses_post(
+                sprintf(
+                    __( '%sAnimate widgets on columns mouse-over event%s %s', 'ooohboi-steroids' ),
+                    '<span class="ob-option-desc">',
+                    '</span>',
+                    '<a class="ooohboi-video-link" href="' . esc_url('https://www.youtube.com/watch?v=uPB0W5OV0sc') . '" target="_blank" rel="noopener noreferrer" style="white-space: nowrap;">' . esc_html__('Video Here', 'ooohboi-steroids') . '</a>'
+                )
+            ),
             'default'       => 'yes',
         ),
         array(

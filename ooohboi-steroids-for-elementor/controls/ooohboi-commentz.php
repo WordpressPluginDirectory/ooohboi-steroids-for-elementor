@@ -3,9 +3,6 @@ use Elementor\Controls_Manager;
 use Elementor\Element_Base;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Typography;
-/*
-use Elementor\Core\Schemes\Typography;
-*/
 use Elementor\Core\Kits\Documents\Tabs\Global_Typography;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -380,7 +377,7 @@ class OoohBoi_Commentz {
 		$element->add_control(
 			'_ob_commentz_show_gravatar',
 			[
-				'label' => __( 'Gravatar', 'ooohboi-steroids' ),
+				'label' => __( 'Gravatar Disable', 'ooohboi-steroids' ),
 				'type' => Controls_Manager::SWITCHER,
 				'return_value' => 'none',
 				'default' => 'block',

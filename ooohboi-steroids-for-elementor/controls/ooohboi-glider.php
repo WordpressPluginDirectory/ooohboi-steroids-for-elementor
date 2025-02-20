@@ -40,6 +40,19 @@ class OoohBoi_Glider {
         /* add script */
         add_action( 'elementor/preview/enqueue_scripts', [ __CLASS__, 'enqueue_scripts' ] );
 
+		// have to change this - code added in the v2.1.7
+		add_action( 'wp_footer', function() {
+            ?>
+            <script>
+                (function() {
+                    var link = document.createElement('link');
+                    link.rel = 'stylesheet';
+                    link.href = '<?php echo OoohBoi_URL . 'assets/css/swiper.min.css' ?>';
+                    document.head.appendChild(link);
+                })();
+            </script>
+            <?php
+        }, 100 );
     }
 
     /* enqueue script JS */
@@ -289,7 +302,7 @@ class OoohBoi_Glider {
 					'cubic-bezier(.19,1,.22,1)' => esc_html__( 'Exponential', 'ooohboi-steroids' ), 
 				],
 				'selectors' => [
-					'{{WRAPPER}}.ob-is-glider .swiper-container-initialized:not(.swiper-container-fade) .swiper-wrapper' => 'transition-property: all; transition-timing-function: {{VALUE}};', 
+					'{{WRAPPER}}.ob-is-glider .swiper-initialized:not(.swiper-fade) .swiper-wrapper' => 'transition-property: all; transition-timing-function: {{VALUE}};', 
 				],
 				'condition' => [
 					'_ob_glider_is_slider' => 'yes', 
@@ -717,8 +730,8 @@ class OoohBoi_Glider {
 				],
 				'selectors' => [
 					'{{WRAPPER}}.ob-is-glider .swiper-pagination-bullet' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};', 
-					'{{WRAPPER}}.ob-is-glider .swiper-container-horizontal > .swiper-pagination-progressbar' => 'height: {{SIZE}}{{UNIT}};', 
-					'{{WRAPPER}}.ob-is-glider .swiper-container-vertical > .swiper-pagination-progressbar' => 'width: {{SIZE}}{{UNIT}};', 
+					'{{WRAPPER}}.ob-is-glider .swiper-horizontal > .swiper-pagination-progressbar' => 'height: {{SIZE}}{{UNIT}};', 
+					'{{WRAPPER}}.ob-is-glider .swiper-vertical > .swiper-pagination-progressbar' => 'width: {{SIZE}}{{UNIT}};', 
 				],
 				'condition' => [
 					'_ob_glider_is_slider' => 'yes', 

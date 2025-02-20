@@ -2,20 +2,23 @@
 /**
  * Plugin Name: OoohBoi Steroids for Elementor
  * Description: An awesome set of tools/options/settings that extend Elementor default/existing widgets and elements. It keeps the editor tidy, saves valuable resources and improves the workflow.
- * Version:     2.1.6
+ * Version:     2.1.14
  * Author:      OoohBoi
  * Author URI:  https://www.youtube.com/c/OoohBoi
  * Text Domain: ooohboi-steroids
- * Domain Path: /lang
- * License: GPLv3
- * Elementor tested up to: 3.17
- * Elementor Pro tested up to: 3.17
+ * License:     GPLv3
  * License URI: http://www.gnu.org/licenses/gpl-3.0
+ * Elementor tested up to: 3.27
+ * Elementor Pro tested up to: 3.27
  */
 
 use Elementor\Core\Settings\Manager as SettingsManager;
 
 defined( 'ABSPATH' ) || die(); // Exit if accessed directly.
+
+define( 'OoohBoi_VERSION', '2.1.14' );
+define( 'OoohBoi_FILE', __FILE__ );
+define( 'OoohBoi_URL', plugins_url( '/', __FILE__ ) );
 
 /**
  * Main OoohBoi Steroids Class
@@ -33,7 +36,7 @@ final class OoohBoi_Steroids {
 	 *
 	 * @var string The plugin version.
 	 */
-	const VERSION = '2.1.6';
+	const VERSION = OoohBoi_VERSION;
 
 	/**
 	 * Minimum Elementor Version
@@ -42,7 +45,7 @@ final class OoohBoi_Steroids {
 	 *
 	 * @var string Minimum Elementor version required to run the plugin.
 	 */
-	const MINIMUM_ELEMENTOR_VERSION = '3.12';
+	const MINIMUM_ELEMENTOR_VERSION = '3.20';
 
 	/**
 	 * Elementor Version for Containers
@@ -51,7 +54,7 @@ final class OoohBoi_Steroids {
 	 *
 	 * @var string Elementor version required for particular extensions to work
 	 */
-	const ELEMENTOR_VERSION_CONTAINER = '3.12';
+	const ELEMENTOR_VERSION_CONTAINER = '3.20';
 
 	/**
 	 * Minimum PHP Version
@@ -60,7 +63,7 @@ final class OoohBoi_Steroids {
 	 *
 	 * @var string Minimum PHP version required to run the plugin.
 	*/
-	const MINIMUM_PHP_VERSION = '7.2';
+	const MINIMUM_PHP_VERSION = '7.4';
 
 	/**
 	 * Plugin URL and PATH
@@ -116,9 +119,6 @@ final class OoohBoi_Steroids {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @access public
-	 * @static
-	 *
 	 * @return OoohBoi_Steroids An instance of the class.
 	 */
 	public static function instance() {
@@ -134,28 +134,10 @@ final class OoohBoi_Steroids {
 	 * Constructor
 	 *
 	 * @since 1.0.0
-	 *
-	 * @access public
 	 */
 	
 	public function __construct() {	
-		add_action( 'init', [ $this, 'i18n' ] );
 		add_action( 'plugins_loaded', [ $this, 'init' ] );
-	}
-
-	/**
-	 * Load Textdomain
-	 *
-	 * Load plugin localization files.
-	 *
-	 * Fired by `init` action hook.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @access public
-	 */
-	public function i18n() {
-		load_plugin_textdomain( 'ooohboi-steroids', FALSE, basename( dirname( __FILE__ ) ) . '/lang/' );
 	}
 
 	/**
@@ -168,8 +150,6 @@ final class OoohBoi_Steroids {
 	 * Fired by 'plugins_loaded' action hook.
 	 *
 	 * @since 1.0.0
-	 *
-	 * @access public
 	 */
 	public function init() {
 
@@ -357,25 +337,19 @@ final class OoohBoi_Steroids {
 
 	}
 
-	/*
-		* On plugin deactivation
-		*
-		* @since 2.1.3
-		*
-		* @access public
+	/**
+	* On plugin deactivation
+	*
+	* @since 2.1.3
 	*/
     public function obs_on_deactivate() {
-
         delete_option( 'steroids_for_elementor' );
-
     }
 
-	/*
-		* Init Extensions
-		*
-		* @since 1.9.0
-		*
-		* @access public
+	/**
+	* Init Extensions
+	*
+	* @since 1.9.0
 	*/
     public function admin_notice_missing_main_plugin() {
 
@@ -398,8 +372,6 @@ final class OoohBoi_Steroids {
 	 * Warning when the site doesn't have a minimum required Elementor version.
 	 *
 	 * @since 1.0.0
-	 *
-	 * @access public
 	 */
 	public function admin_notice_minimum_elementor_version() {
 
@@ -442,13 +414,10 @@ final class OoohBoi_Steroids {
 
 	}
 
-	/*
-		* Init Extensions
-		*
-		* @since 1.4.8		
-		* @modified	1.8.2
-		*
-		* @access public
+	/**
+	* Init Extensions
+	*
+	* @since 1.4.8
 	*/
 	public function ooohboi_init_extensions( $ob_settings_options ) {
 
@@ -527,14 +496,13 @@ final class OoohBoi_Steroids {
 		}
 		
 	}
-	/*
-		* Init styles for Elementor Editor
-		*
-		* Include css files and register them
-		*
-		* NEW @since 1.9.0				
-		*
-		* @access public
+
+	/**
+	* Init styles for Elementor Editor
+	*
+	* Include css files and register them
+	*
+	* NEW @since 1.9.0
 	*/
 	public function ooohboi_register_styles_editor() {
 
@@ -581,21 +549,21 @@ final class OoohBoi_Steroids {
 		}
 
 	}
+
 	public static function ooohboi_dark_stylesheet_url() {
 		return plugins_url( 'assets/css/editor-dark.css', __FILE__ );
 	}
+
 	public static function ooohboi_light_stylesheet_url() {
 		return plugins_url( 'assets/css/editor.css', __FILE__ );
 	}
 
-	/*
-		* Init styles
-		*
-		* Include css files and register them
-		*
-		* @since 1.0.0				
-		*
-		* @access public
+	/** 
+	* Init styles
+	*
+	* Include css files and register them
+	*
+	* @since 1.0.0
 	*/
 	public function ooohboi_register_styles() {
 
@@ -609,18 +577,17 @@ final class OoohBoi_Steroids {
 
 	}
 
-	/*
-		* Init Scripts
-		*
-		* Include js files and register them
-		*
-		* @since 1.0.0				
-		*
-		* @access public
+	/**
+	* Init Scripts
+	*
+	* Include js files and register them
+	*
+	* @since 1.0.0
 	*/
 	public function ooohboi_check_file_avail( $the_file ) {
 		return (bool)@fopen( $the_file, 'r' );
 	}
+
 	public function ooohboi_register_scripts_front() {
 
 		$ele_is_preview = \Elementor\Plugin::$instance->preview->is_preview_mode(); 
@@ -669,8 +636,6 @@ final class OoohBoi_Steroids {
 	 * Include extensions
 	 *
 	 * @since 1.0.0
-	 *
-	 * @access public
 	 */
 	public static function ooohboi_take_steroids() {
 
